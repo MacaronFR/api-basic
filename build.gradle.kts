@@ -26,6 +26,15 @@ publishing {
 				description = "IMacaron basics for API development in Kotlin using Ktor"
 				url = "https://github.com/MacaronFR/api-basic"
 				inceptionYear = "2025"
+				developers {
+					developer {
+						id = "MacaronFR"
+						name = "MacaronFR"
+						url = "https:/github.com/MacaronFR"
+						roles = mutableSetOf("developer")
+						timezone = "Europe/Paris"
+					}
+				}
 				licenses {
 					license {
 						name = "Apache-2.0"
@@ -90,4 +99,9 @@ tasks.test {
 }
 kotlin {
 	jvmToolchain(21)
+}
+
+java {
+	withSourcesJar()
+	withJavadocJar()
 }
