@@ -51,7 +51,7 @@ fun Query.search(searchQuery: SearchQuery, limit: Boolean = true): Query {
 	}
 	val columnsMap = columns.associateBy {
 		when(it) {
-			is Column<*> -> it.name
+			is Column<*> -> if(it.table == targets.first()) it.name else "${it.table.tableName.toPascalCase()}.${it.name}"
 			is ExpressionWithColumnTypeAlias<*> -> it.alias
 			else -> ""
 		}
@@ -111,7 +111,7 @@ fun Query.search(searchQuery: SearchQuery, limit: Boolean = true): Query {
 			}
 		}
 	}
-	this.targets.first().columns.first { it.columnType is EntityIDColumnType<*> }?.let { idCol ->
+	this.targets.first().columns.first { it.columnType is EntityIDColumnType<*> }.let { idCol ->
 		query = query.orderBy(idCol, SortOrder.ASC)
 	}
 	if(limit) {
