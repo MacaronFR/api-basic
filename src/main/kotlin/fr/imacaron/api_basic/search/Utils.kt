@@ -29,6 +29,6 @@ val MariaDBDateFormat = LocalDate.Format {
 	year(); char('-'); monthNumber(); char('-'); dayOfMonth()
 }
 
-fun String.toPascalCase(): String = this.replace("/_([A-Za-z0-9])/".toRegex()) { matchResult ->
+fun String.toPascalCase(): String = this.lowercase().replace("/_([a-z0-9])/".toRegex()) { matchResult ->
 	matchResult.groups[1]?.value?.uppercase() ?: ""
 }
