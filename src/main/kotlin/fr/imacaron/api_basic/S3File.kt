@@ -14,7 +14,7 @@ import java.net.URI
 
 /**
  * @author TURBIEZ Denis
- * @constructor Construct a [S3File] with some needed parameters
+ * @constructor Construct a [S3File] with some necessary parameters
  * @param accessKey The S3 access key
  * @param secretKey The S3 secret key
  * @param url The S3 base url, you can use `<region>` to use a placeholder for the region
@@ -50,7 +50,7 @@ class S3File(accessKey: String, secretKey: String, url: String, region: String, 
 	 * @author TURBIEZ Denis
 	 * @param directory The prefix (directory) to put in
 	 * @param key The file name to put
-	 * @param data The [ByteArray] to use to put file
+	 * @param data The [ByteArray] to use to put a file
 	 * @return **true** if the put was successful, false otherwise
 	 */
 	fun putFile(directory: String, key: String, data: ByteArray): Boolean =
@@ -61,7 +61,7 @@ class S3File(accessKey: String, secretKey: String, url: String, region: String, 
 	 * @author TURBIEZ Denis
 	 * @param directory The prefix (directory) to put in
 	 * @param key The file name to put
-	 * @param data The input Stream to use to put file
+	 * @param data The input Stream to use to put a file
 	 * @param length The length of the stream
 	 * @return **true** if the put was successful, false otherwise
 	 */
