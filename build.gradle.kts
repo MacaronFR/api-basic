@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "fr.imacaron"
-version = "1.2.0"
+version = "1.3.0"
 
 repositories {
 	mavenCentral()
@@ -92,6 +92,7 @@ dependencies {
 	implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
 	implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
 	implementation("org.jetbrains.exposed:exposed-kotlin-datetime:$exposedVersion")
+	implementation("software.amazon.awssdk:s3:2.24.12")
 }
 
 tasks.test {
