@@ -11,7 +11,7 @@ import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.primaryConstructor
 
 interface CustomMapper<T> {
-	val custom: Map<KProperty<Any>, KProperty<Any>>
+	val custom: Map<KProperty<Any?>, KProperty<Any?>>
 }
 
 class EntityToTypeDelegate<E: Entity<*>, T: Any>(private val entity: E, private val type: KClass<T>) {
