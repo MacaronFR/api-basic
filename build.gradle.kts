@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "fr.imacaron"
-version = "1.3.1"
+version = "1.3.2"
 
 repositories {
 	mavenCentral()
@@ -84,12 +84,13 @@ jreleaser {
 }
 
 val ktorVersion = "3.1.2"
-val exposedVersion = "0.61.0"
+val exposedVersion = "1.0.0"
 
 dependencies {
 	implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
 
 	implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+	implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
 	implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
 	implementation("org.jetbrains.exposed:exposed-kotlin-datetime:$exposedVersion")
 	implementation("software.amazon.awssdk:s3:2.24.12")
